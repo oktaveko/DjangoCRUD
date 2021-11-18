@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e52daf64-697c-4f09-9ffc-0aa7960807a9/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/CRUD-oktav",
+    "appService.deploySubpath": "."
+}
