@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3!f!_h*=9cq-ne%ntr@!sy0r%+hp_l)m=nyxujp*v6*572g4c#'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -83,10 +86,10 @@ WSGI_APPLICATION = 'projek_karyawan.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'karyawandb',
-        'USER' : 'myadmin',
-        'PASSWORD': "Yukinoshita0301!",
-        'HOST' :'oktavserver-mysql.mysql.database.azure.com',
+        'NAME': os.getenv("DB_NAME"),
+        'USER' : os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASS"),
+        'HOST' :os.getenv("DB_HOST"),
         'PORT' : '3306',
         'OPTIONS' : {
             #'sql_mode' : 'traditional',
